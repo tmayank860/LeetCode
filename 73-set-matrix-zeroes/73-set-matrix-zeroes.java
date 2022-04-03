@@ -1,7 +1,31 @@
 class Solution {
     
+     public void setZeroes(int[][] matrix) {
+         int[] row=new int[matrix.length];
+         int[] col=new int[matrix[0].length];
+         Arrays.fill(row,Integer.MIN_VALUE);
+         Arrays.fill(col,Integer.MIN_VALUE);
+         for( int i=0;i<matrix.length;i++){
+             for(int j=0;j<matrix[0].length;j++){
+                 if(matrix[i][j]==0){
+                     row[i]=0;
+                     col[j]=0;
+                 }
+             }
+         }
+          for(int i=0;i<matrix.length;i++){
+             for(int j=0;j<matrix[0].length;j++){
+                 if(row[i]==0||col[j]==0){
+                     matrix[i][j]=0;
+                 }
+             }
+          }
+     }
     
-    public void setZeroes(int[][] matrix) {
+    
+    
+  /* (N2) extra space
+  public void setZeroes(int[][] matrix) {
         ArrayList<ArrayList<Integer>> res = new ArrayList<>();
         for (int i = 0; i < matrix.length; i++) {
             res.add(new ArrayList<>());
@@ -27,10 +51,7 @@ class Solution {
                 }
 
             }
-        }
-
-        System.out.println(res);
-        
-    }
+        }        
+    } */
     
 }
