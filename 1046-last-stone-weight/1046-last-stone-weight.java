@@ -12,6 +12,6 @@ class Solution {
                 pq.add(first-second);
             }
         }
-        return pq.isEmpty()? 0: pq.poll();
+        return pq.isEmpty()? 0 : pq.poll();
     }
 }
