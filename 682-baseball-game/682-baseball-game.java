@@ -18,7 +18,6 @@ class Solution {
                 idx++;
             }
         }
-        System.out.println(ls);
         int res=0;
          for(int i=0;i<ls.size();i++){
            
