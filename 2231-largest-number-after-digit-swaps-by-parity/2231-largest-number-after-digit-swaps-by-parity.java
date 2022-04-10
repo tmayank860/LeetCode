@@ -14,15 +14,7 @@ class Solution {
             n=n/10;
         }
         String s=num+"";
-        flag=Integer.parseInt(s.charAt(0)+"")%2==0?true:false;
-        System.out.println(odd);
-         String res="";
-        // if(flag){
-        //     res+=even.poll()+"";
-        // }else{
-        //     res+=odd.poll()+"";
-        // }
-        // idx=1;
+        String res="";
         while(idx<s.length()){
             if(Integer.parseInt(s.charAt(idx)+"")%2==0){
                 res+=even.poll()+"";
