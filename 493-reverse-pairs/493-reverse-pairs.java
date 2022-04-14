@@ -1,5 +1,5 @@
 class Solution {
-   static int merge(int[] nums, int low, int mid, int high) {
+  static int merge(int[] nums, int low, int mid, int high) {
         int cnt = 0;
         int j = mid + 1; 
         for(int i = low;i<=mid;i++) {
