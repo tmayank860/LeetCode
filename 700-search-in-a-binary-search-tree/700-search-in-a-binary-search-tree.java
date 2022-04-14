@@ -14,17 +14,28 @@
  * }
  */
 class Solution {
-    public TreeNode searchBST(TreeNode root, int val) {
-        if(root==null){
-            return null;
+    //Recursive
+    // public TreeNode searchBST(TreeNode root, int val) {
+    //     if(root==null){
+    //         return null;
+    //     }
+    //     if(root.val==val){
+    //         return root;
+    //     }
+    //     if(root.val>val){
+    //         return searchBST(root.left,val);
+    //     }else{
+    //         return searchBST(root.right,val);
+    //     }
+    // }
+    
+    //Iterative Approach
+    
+     public TreeNode searchBST(TreeNode root, int val) {
+        while(root!=null){
+            if(root.val==val){return root;}
+            root=root.val>val?root.left:root.right;
         }
-        if(root.val==val){
-            return root;
-        }
-        if(root.val>val){
-            return searchBST(root.left,val);
-        }else{
-            return searchBST(root.right,val);
-        }
+         return root;
     }
 }
