@@ -4,9 +4,7 @@ class Solution {
             return 1;
         }
         long sum=0;
-        int pencil=total/cost2;
         int pen=0;
-        
         while(pen*cost1<=total){
             sum+=(total-(pen*cost1))/cost2+1;
             pen++;
