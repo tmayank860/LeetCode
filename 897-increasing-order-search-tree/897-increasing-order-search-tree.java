@@ -14,27 +14,40 @@
  * }
  */
 class Solution {
+    TreeNode current;
     public TreeNode increasingBST(TreeNode root) {
         if(root==null){
             return null;
         }
-        ArrayList<Integer> ls=new ArrayList<>();
-        inOrder(root,ls);
-        TreeNode newRoot=new TreeNode(ls.get(0));
-        TreeNode current=newRoot;
-        for(int i=1;i<ls.size();i++){
-            TreeNode node=new TreeNode(ls.get(i));
-            current.right=node;
-            current=current.right;
-        }
-        return newRoot;
+        // ArrayList<Integer> ls=new ArrayList<>();
+        TreeNode newRoot=new TreeNode(-1);
+        current=newRoot;
+        inOrder(root);
+        // TreeNode newRoot=new TreeNode(ls.get(0));
+        // TreeNode current=newRoot;
+        // for(int i=1;i<ls.size();i++){
+        //     TreeNode node=new TreeNode(ls.get(i));
+        //     current.right=node;
+        //     current=current.right;
+        // }
+        return newRoot.right;
     }
-    static void inOrder(TreeNode root, ArrayList<Integer> ls){
+    public void inOrder(TreeNode root){
         if(root==null){
             return;
         }
-        inOrder(root.left,ls);
-        ls.add(root.val);
-        inOrder(root.right,ls);
+        inOrder(root.left);
+        root.left=null;
+        current.right=root;
+        current=root;
+        inOrder(root.right);
     }
+    //  static void inOrder(TreeNode root, ArrayList<Integer> ls){
+    //     if(root==null){
+    //         return;
+    //     }
+    //     inOrder(root.left,ls);
+    //     ls.add(root.val);
+    //     inOrder(root.right,ls);
+    // }
 }
