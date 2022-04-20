@@ -15,22 +15,34 @@
  */
 class BSTIterator {
 //O(n) Space
-    ArrayList<Integer> ls=new ArrayList<>();
+    // ArrayList<Integer> ls=new ArrayList<>();
+    Stack<TreeNode> ls=new Stack<>();
+    
     public BSTIterator(TreeNode root) {
-        inOrder(root);
+        // inOrder(root);
+        pushLeft(root);
         
     }
-    public void inOrder(TreeNode root){
-        if(root==null){
-            return;
+    // public void inOrder(TreeNode root){
+    //     if(root==null){
+    //         return;
+    //     }
+    //     inOrder(root.left);
+    //     ls.add(root.val);
+    //     inOrder(root.right);
+    // }
+    public void pushLeft(TreeNode root){
+        while(root!=null){
+            ls.push(root);
+            root=root.left;
         }
-        inOrder(root.left);
-        ls.add(root.val);
-        inOrder(root.right);
     }
     
     public int next() {
-        return ls.remove(0);
+        // return ls.remove(0);
+        TreeNode res=ls.pop();
+        pushLeft(res.right);
+        return res.val;
     }
     
     public boolean hasNext() {
