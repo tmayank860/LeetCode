@@ -21,4 +21,23 @@ public class Solution {
         }
         return false;
     }
+    
+//     public boolean hasCycle(ListNode head) {
+//         if(head==null){
+//             return false;
+//         }
+//         Set<ListNode> hs=new HashSet<>();
+//         ListNode current=head;
+//         while(current.next!=null){
+//             if(hs.contains(current)){
+//                 return true;
+//             }
+//             hs.add(current);
+//             current=current.next;
+            
+           
+//         }
+//         return false;
+//     }
+    
 }
